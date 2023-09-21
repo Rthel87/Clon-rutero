@@ -4,7 +4,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-white">
     <div class="container">
-      <a href="https://www.rutero.cl">
+      <a class="navbar-brand" href="https://www.rutero.cl">
         <img class="retina-off" src="@/assets/logo-green.png" alt="Rutero">
       </a>
       <div class="collapse navbar-collapse">
