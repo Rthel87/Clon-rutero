@@ -1,4 +1,19 @@
 <script setup>
+import { ref, onMounted } from 'vue'
+import Card from './Card.vue'
+
+let data = ref([])
+
+const getBlogData = async () => {
+  let res = await fetch('src/data/blog-data.json')
+  let file = await res.json()
+  data.value = file
+  console.log(data)
+}
+
+onMounted(() => {
+  getBlogData()
+})
 
 </script>
 
@@ -10,7 +25,9 @@
           <h1 class="page-title">Blog</h1>
           <div class="page-content">
             <div class="row pt-4">
-              
+              <template v-for="element in data">
+                <Card :img-url="element.photo" :title="element.title" :data-id="element.dataId" />
+              </template>
             </div>
           </div>
         </div>
