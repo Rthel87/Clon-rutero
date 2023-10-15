@@ -8,7 +8,14 @@ const router = createRouter({
     {
       path: '/',
       name: 'blog',
-      component: BlogView
+      component: BlogView,
+      props: { query: 1 }
+    },
+    {
+      path: '/blog',
+      name: 'pages',
+      component: BlogView,
+      props: route => ({ query: route.query.page })
     },
     {
       path: '/about',

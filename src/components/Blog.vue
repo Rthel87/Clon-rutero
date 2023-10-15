@@ -1,7 +1,41 @@
 <script setup>
+import { ref, onMounted } from 'vue'
+import Card from './Card.vue'
+import Pagination from './Pagination.vue'
+
+const props = defineProps(['page'])
+
+let data = ref([])
+
+const getBlogData = async () => {
+  let res = await fetch('src/data/blog-data.json')
+  let file = await res.json()
+  data.value = file
+}
+
+onMounted(() => {
+  getBlogData()
+})
 
 </script>
 
 <template>
-  <h1>Este es el Blog</h1>
+  <section class="section page-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-11 col-xl-10">
+          <h1 class="page-title">Blog</h1>
+          <div class="page-content">
+            <div class="row pt-4">
+              <template v-for="element in data">
+                <Card :img-url="element.photo" :title="element.title" :data-id="element.dataId" />
+              </template>
+            </div>
+            <Pagination :visiting="props.page" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </template>
