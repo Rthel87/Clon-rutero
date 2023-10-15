@@ -9,13 +9,13 @@ const router = createRouter({
       path: '/',
       name: 'blog',
       component: BlogView,
-      props: { num: 1 }
+      props: { query: 1 }
     },
     {
-      path: '/blog?page=:num',
+      path: '/blog',
       name: 'pages',
       component: BlogView,
-      props: true
+      props: route => ({ query: route.query.page })
     },
     {
       path: '/about',
