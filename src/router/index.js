@@ -8,7 +8,14 @@ const router = createRouter({
     {
       path: '/',
       name: 'blog',
-      component: BlogView
+      component: BlogView,
+      props: { num: 1 }
+    },
+    {
+      path: '/blog?page=:num',
+      name: 'pages',
+      component: BlogView,
+      props: true
     },
     {
       path: '/about',
