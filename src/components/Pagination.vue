@@ -4,7 +4,10 @@ import { computed } from 'vue'
 const props = defineProps(['visiting'])
 
 const toShow = computed(() => {
-  return props.visiting + 5 - 1
+  if (props.visiting >= 10) {
+    return 14
+  }
+  return props.visiting + 4
 })
 
 const fromShow = computed(() => {
