@@ -26,7 +26,7 @@ const titleLink = computed(() => {
         <img class="camping card-cover unveil" :src="imgSource" alt="">
       </a>
       <p class="camping-card-title">
-        <a :href="tittleLink">{{ props.title }}</a>
+        <a :href="titleLink">{{ props.title }}</a>
       </p>
     </div>
   </div>

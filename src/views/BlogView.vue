@@ -3,12 +3,12 @@ import Navbar from '../components/Navbar.vue'
 import Blog from '../components/Blog.vue'
 import Footer from '../components/Footer.vue'
 
-const props = defineProps(['num'])
+const props = defineProps(['query'])
 
 </script>
 
 <template>
   <Navbar />
-  <Blog />
+  <Blog :page="parseInt(props.query)" />
   <Footer />
 </template>

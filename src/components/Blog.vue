@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import Card from './Card.vue'
+import Pagination from './Pagination.vue'
+
+const props = defineProps(['page'])
 
 let data = ref([])
 
@@ -8,7 +11,6 @@ const getBlogData = async () => {
   let res = await fetch('src/data/blog-data.json')
   let file = await res.json()
   data.value = file
-  console.log(data)
 }
 
 onMounted(() => {
@@ -29,6 +31,7 @@ onMounted(() => {
                 <Card :img-url="element.photo" :title="element.title" :data-id="element.dataId" />
               </template>
             </div>
+            <Pagination :visiting="props.page" />
           </div>
         </div>
       </div>
