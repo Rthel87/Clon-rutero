@@ -21,48 +21,39 @@
   }
 }
 
-@media (max-width: 991.98px) {
-  .navbar-expand-lg > .container, navbar-expand-lg > container-fluid {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-
-@media (max-width: 992px) {
-  .navbar-expand-lg {
+.navbar-expand-lg {
+  @media (max-width: $layout-breakpoint-large) {
     flex-flow: row nowrap;
     justify-content: flex-start;
+
+    .navbar-nav {
+      flex-direction: row;
+      .dropdown-menu {
+        position: absolute;
+      }
+      .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+      }
+    }
+
+    .navbar-collapse {
+      display: flex !important;
+      flex-basis: auto;
+    }
+
+    .navbar-toggler {
+      display:none;
+    }
+
+    &>.container, &>container-fluid {
+      padding-right: 0;
+      padding-left: 0;
+      flex-wrap: nowrap;
+    }
   }
 
-  .navbar-expand-lg .navbar-nav {
-    flex-direction: row;
-  }
-
-  .navbar-expand-lg .navbar-nav .dropdown-menu {
-    position: absolute;
-  }
-
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
-  }
-
-  .navbar-expand-lg > .container, .navbar-expand-lg > container-fluid {
-    flex-wrap: nowrap;
-  }
-
-  .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-  }
-
-  .navbar-expand-lg .navbar-toggler {
-    display: none;
-  }
-}
-
-@media (min-width: 992px) {
-  .navbar-expand-lg {
+  @media (min-width: $layout-breakpoint-large) {
     .navbar-nav {
       .nav-link {
         padding-left: 1.25rem;
