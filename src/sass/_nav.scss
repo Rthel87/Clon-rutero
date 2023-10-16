@@ -22,7 +22,7 @@
 }
 
 .navbar-expand-lg {
-  @media (max-width: $layout-breakpoint-large) {
+  @media (max-width: $breakpoint-lg) {
     flex-flow: row nowrap;
     justify-content: flex-start;
 
@@ -53,7 +53,7 @@
     }
   }
 
-  @media (min-width: $layout-breakpoint-large) {
+  @media (min-width: $breakpoint-lg) {
     .navbar-nav {
       .nav-link {
         padding-left: 1.25rem;
@@ -61,4 +61,13 @@
       }
     }
   }
+}
+
+.navbar-brand {
+  margin-right: 1.25rem;
+  padding: 1.125rem 0 1.1875rem;
+  display: inline-block;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
 }
