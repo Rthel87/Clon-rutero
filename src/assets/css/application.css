@@ -35,7 +35,7 @@
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;
   }
-  .navbar-expand-lg .navbar-nav .dropdonw-menu {
+  .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: absolute;
   }
   .navbar-expand-lg .navbar-nav .nav-link {
@@ -62,7 +62,6 @@
 .container {
   position: relative;
 }
-
 @media (max-width: 576px) {
   .container {
     max-width: 540px;
