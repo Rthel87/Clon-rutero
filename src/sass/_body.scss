@@ -1,8 +1,38 @@
+* {
+  ::before, ::after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  color: #000000;
+  font-family: "Barlow", sans-serif;
+  font-size: 0.075rem;
+  line-height: 1.37145;
+  font-weight: 400;
+  a {
+    color: #36B0A7;
+    text-decoration: none;
+  }
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
 .container {
   position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 
-  @media (max-width: $layout-breakpoint-small) { max-width: 540px }
-  @media (max-width: $layout-breakpoint-medium) { max-width: 720px }
-  @media (max-width: $layout-breakpoint-large) { max-width: 960px }
-  @media (max-width: $layout-breakpoint-extra-large) { max-width: 1140px }
+  @media (max-width: $breakpoint-sm) { max-width: 540px }
+  @media (max-width: $breakpoint-md) { max-width: 720px }
+  @media (max-width: $breakpoint-lg) { max-width: 960px }
+  @media (max-width: $breakpoint-xl) { max-width: 1140px }
 }
